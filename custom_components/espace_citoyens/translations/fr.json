@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion Espace Citoyens",
+        "description": "Renseignez l'URL de votre portail Espace Citoyens.\n\nEx : `https://www.espace-citoyens.net/ma-commune/espace-citoyens/`",
+        "data": {
+          "url":      "URL du portail (ex: https://www.espace-citoyens.net/ma-commune/espace-citoyens/)",
+          "username": "Identifiant",
+          "password": "Mot de passe",
+          "name":     "Nom du calendrier (laisser vide pour valeur par défaut)"
+        }
+      },
+      "membres": {
+        "title": "Membres de la famille",
+        "description": "Sélectionnez les membres dont vous souhaitez suivre les réservations.",
+        "data": {
+          "membres": "Membres à surveiller"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter au portail. Vérifiez l'URL et votre connexion internet.",
+      "invalid_auth":   "Identifiants incorrects. Vérifiez votre nom d'utilisateur et mot de passe.",
+      "invalid_url":    "URL invalide. Elle doit être de la forme https://www.espace-citoyens.net/ma-commune/espace-citoyens/",
+      "unknown":        "Erreur inattendue. Consultez les journaux Home Assistant."
+    },
+    "abort": {
+      "already_configured": "Ce compte est déjà configuré."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Espace Citoyens",
+        "data": {
+          "name":    "Nom du calendrier",
+          "membres": "Membres à surveiller"
+        }
+      }
+    }
+  }
+}

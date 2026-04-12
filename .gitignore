@@ -1,0 +1,17 @@
+# Fichier de test avec identifiants
+test_api.py
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+
+# Home Assistant
+*.log
