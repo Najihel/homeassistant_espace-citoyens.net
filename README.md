@@ -77,7 +77,3 @@ Requiert Home Assistant 2024.1 ou supérieur.
 - **Code** : généré par [Claude.ai](https://claude.ai)
 - **Logo** : [Logo Mairie — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Logo-Mairie.svg)
 - **Portail** : [Espace-Citoyens.net par Arpège](https://arpege.fr/logiciels-gestion-relation-citoyen/portail-citoyen)
-
----
-
-*Aucune licence — tous droits réservés.*
