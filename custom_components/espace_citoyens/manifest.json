@@ -1,7 +1,7 @@
 {
   "domain": "espace_citoyens",
   "name": "Espace Citoyens (Arpège)",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "documentation": "https://github.com/Najihel/homeassistant_espace-citoyens.net",
   "issue_tracker": "https://github.com/Najihel/homeassistant_espace-citoyens.net/issues",
   "dependencies": [],
