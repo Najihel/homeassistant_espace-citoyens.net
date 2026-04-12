@@ -1,11 +1,12 @@
 # Espace Citoyens pour Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-[![HA Version](https://img.shields.io/badge/Home%20Assistant-2024.1%2B-blue.svg)](https://www.home-assistant.io/)
+[![HA Version](https://img.shields.io/badge/Home%20Assistant-2026.3%2B-blue.svg)](https://www.home-assistant.io/)
 
 Intégration Home Assistant pour les portails **Espace Citoyens** développés par la société **Arpège**.
 
 Récupère automatiquement les réservations de vos enfants dans un calendrier Home Assistant :
+
 - Cantine / Restauration scolaire
 - Périscolaire (garderie matin et soir)
 - Centre de loisirs / ALSH (mercredis, petites et grandes vacances)
@@ -40,8 +41,7 @@ Copiez le dossier `custom_components/espace_citoyens/` dans votre répertoire `c
 1. **Paramètres → Appareils et services → Ajouter une intégration**
 2. Recherchez **Espace Citoyens**
 3. Renseignez :
-   - **URL du portail** : l'URL complète de votre espace citoyens  
-     Ex : `https://www.espace-citoyens.net/ma-commune/espace-citoyens/`
+   - **URL du portail** : l'URL complète de votre espace citoyens (Ex : `https://www.espace-citoyens.net/ma-commune/espace-citoyens/`)
    - **Identifiant** et **Mot de passe** : vos identifiants du portail
    - **Nom du calendrier** (optionnel) : nom affiché dans HA, ex : `Famille Martin`
 4. Sélectionnez les membres de la famille à surveiller
@@ -68,7 +68,7 @@ Bob – Restauration scolaire
 ## Compatibilité
 
 Testé sur les communes utilisant la plateforme Arpège Espace Citoyens.
-Requiert Home Assistant 2024.1 ou supérieur.
+Requiert Home Assistant 2026.3 ou supérieur.
 
 ---
 
