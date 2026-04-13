@@ -30,6 +30,8 @@ Le créateur de cette intégration ne peut être tenu responsable des problèmes
 4. Cliquez sur **Espace Citoyens** → **Télécharger**
 5. Redémarrez Home Assistant
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Najihel&repository=homeassistant_espace-citoyens.net&category=integration)
+
 ## Installation manuelle
 
 Copiez le dossier `custom_components/espace_citoyens/` dans votre répertoire `config/custom_components/`.
@@ -45,6 +47,8 @@ Copiez le dossier `custom_components/espace_citoyens/` dans votre répertoire `c
    - **Identifiant** et **Mot de passe** : vos identifiants du portail
    - **Nom du calendrier** (optionnel) : nom affiché dans HA, ex : `Famille Martin`
 4. Sélectionnez les membres de la famille à surveiller
+
+[![Open your Home Assistant instance and start setting up a new integration of a specific brand.](https://my.home-assistant.io/badges/brand.svg)](https://my.home-assistant.io/redirect/brand/?brand=espace_citoyens)
 
 ---
 
