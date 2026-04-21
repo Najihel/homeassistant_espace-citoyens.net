@@ -339,17 +339,51 @@ class EspaceCitoyensClient:
             for g in groupes_raw
         }
 
+        # ── Passe 1 : normalisation de tous les événements ───────────────────
         result = []
         for raw in evenements_raw:
             evt = self._normalise_evenement(raw, groupes_index, id_dynamic)
             if evt is not None:
                 result.append(evt)
 
+        # ── Passe 2 : déduplication all_day vs timed ──────────────────────
+        #
+        # Le portail Arpège génère parfois deux événements pour la même
+        # prestation sur la même date :
+        #   - Un événement "timed" avec HeureDebut/HeureFin précises
+        #     (ex: "08:15-17:30-Résa", id=PH768358)
+        #   - Un événement "all_day" résumé de facturation
+        #     (ex: "Journée-Résa", id=P0, HeureDebut vide)
+        #
+        # Règle : si un événement timed existe sur (date, groupe),
+        # on supprime le all_day correspondant car il est redondant.
+        # Si seul le all_day existe (ex: Restauration Scolaire), on le garde.
+        #
+        timed_keys: set[tuple] = {
+            (e["date"], e["id_dynamic"], e.get("_groupe_id", ""))
+            for e in result
+            if not e["all_day"]
+        }
+
+        result_dedup = [
+            e for e in result
+            if not e["all_day"]
+            or (e["date"], e["id_dynamic"], e.get("_groupe_id", "")) not in timed_keys
+        ]
+
+        avant = len(result)
+        apres = len(result_dedup)
+        if avant != apres:
+            _LOGGER.debug(
+                "[%s] idDynamic=%s : %d doublons all_day supprimés",
+                self.commune, id_dynamic, avant - apres,
+            )
+
         _LOGGER.debug(
-            "[%s] idDynamic=%s : %d événements (%d bruts)",
-            self.commune, id_dynamic, len(result), len(evenements_raw),
+            "[%s] idDynamic=%s : %d événements (%d bruts, %d après dédup)",
+            self.commune, id_dynamic, apres, len(evenements_raw), apres,
         )
-        return result
+        return result_dedup
 
     def _normalise_evenement(
         self,
@@ -410,6 +444,7 @@ class EspaceCitoyensClient:
         return {
             "uid":           uid,
             "id_dynamic":    id_dynamic,
+            "_groupe_id":    id_groupe,   # utilisé pour la déduplication all_day
             "date":          evt_date,
             "start":         start_dt,
             "end":           end_dt,
