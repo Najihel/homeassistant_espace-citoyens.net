@@ -101,7 +101,7 @@ class EspaceCitoyensCompteurSensor(_Base):
             coordinator,
             cal_name,
             unique_suffix="compteur_reservations",
-            name=f"Réservations – {cal_name}",
+            name=f"Réservations - {cal_name}",
         )
 
     @property
@@ -137,7 +137,7 @@ class EspaceCitoyensProchainSensor(_Base):
             coordinator,
             cal_name,
             unique_suffix="prochain_evenement",
-            name=f"Prochain événement – {cal_name}",
+            name=f"Prochain événement - {cal_name}",
         )
 
     def _get_prochain(self) -> dict[str, Any] | None:
@@ -150,7 +150,7 @@ class EspaceCitoyensProchainSensor(_Base):
         if not evt:
             return "Aucune réservation"
         nom = evt.get("_membre_nom", "")
-        return f"{nom} – {evt['summary']}" if nom else evt["summary"]
+        return f"{nom} - {evt['summary']}" if nom else evt["summary"]
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:

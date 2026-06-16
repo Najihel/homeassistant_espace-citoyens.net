@@ -52,7 +52,7 @@ class EspaceCitoyensCalendar(CoordinatorEntity, CalendarEntity):
     Calendrier unique regroupant tous les événements de la commune.
 
     Chaque événement est préfixé par le nom du membre :
-      "Bob – 📅 Réservation – Accueil Périscolaire matin"
+      "Bob - 📅 Réservation - Accueil Périscolaire matin"
     """
 
     _attr_has_entity_name = False
@@ -172,7 +172,7 @@ def _to_calendar_event(evt: dict[str, Any]) -> CalendarEvent:
     Convertit un événement normalisé en CalendarEvent HA.
 
     Le titre est préfixé par le nom du membre :
-      "Alice – 📅 Réservation – Accueil Périscolaire matin"
+      "Alice - 📅 Réservation - Accueil Périscolaire matin"
 
     Règles HA strictes :
       - Journée entière → start/end de type `date`
@@ -190,7 +190,7 @@ def _to_calendar_event(evt: dict[str, Any]) -> CalendarEvent:
 
     # Préfixe par le nom du membre
     nom_membre = evt.get("_membre_nom", "")
-    summary = f"{nom_membre} – {evt['summary']}" if nom_membre else evt["summary"]
+    summary = f"{nom_membre} - {evt['summary']}" if nom_membre else evt["summary"]
 
     # Description enrichie
     desc_parts = [evt["description"]] if evt.get("description") else []
