@@ -57,8 +57,8 @@ Copiez le dossier `custom_components/espace_citoyens/` dans votre répertoire `c
 ### Calendrier
 Un seul calendrier par commune. Les événements sont préfixés par le nom du membre :
 ```
-Alice – Accueil Périscolaire matin
-Bob – Restauration scolaire
+Alice - Accueil Périscolaire matin
+Bob - Restauration scolaire
 ```
 
 ### Capteurs
